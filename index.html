@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🧨 GloboPlus FX</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+
+<body class="dark">
+    <div id="loader" class="loader">
+        <div class="spinner"></div>
+    </div>
+
+    <nav>
+        <div class="nav-content">
+            <h1 class="logo">
+                <img src="assets/images/mini-icon.png" alt="Icono"
+                style="height: 24px; vertical-align: middle; margin-right: 8px; position: relative; top: -3px;">
+              GloboPlus<span class="fx-white">FX</span>
+            </h1>
+            <div class="nav-links">
+                <button onclick="scrollToSection('home')" class="nav-link active">Inicio</button>
+                <button onclick="scrollToSection('projects')" class="nav-link">Proyectos</button>
+                <button onclick="scrollToSection('services')" class="nav-link">Servicios</button>
+                <button onclick="scrollToSection('contact')" class="nav-link">Contactos</button>
+                <button onclick="toggleTheme()" class="theme-toggle">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="4" />
+                        <path d="M12 2v2" />
+                        <path d="M12 20v2" />
+                        <path d="m4.93 4.93 1.41 1.41" />
+                        <path d="m17.66 17.66 1.41 1.41" />
+                        <path d="M2 12h2" />
+                        <path d="M20 12h2" />
+                        <path d="m6.34 17.66-1.41 1.41" />
+                        <path d="m19.07 4.93-1.41 1.41" />
+                    </svg>
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+                    </svg>
+                </button>
+            </div>
+            <button class="menu-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="4" x2="20" y1="12" y2="12" />
+                    <line x1="4" x2="20" y1="6" y2="6" />
+                    <line x1="4" x2="20" y1="18" y2="18" />
+                </svg>
+            </button>
+        </div>
+        <div class="mobile-menu">
+            <button onclick="scrollToSection('home')" class="mobile-link">Inicio</button>
+            <button onclick="scrollToSection('projects')" class="mobile-link">Proyectos</button>
+            <button onclick="scrollToSection('contact')" class="mobile-link">Contacto</button>
+            <button onclick="scrollToSection('services')" class="mobile-link">Servicios</button>
+        </div>
+    </nav>
+
+    <main>
+        <section id="home">
+            <div class="container">
+                <div class="hero-grid">
+                    <div class="profile-image-container">
+                        <div class="image-backdrop"></div>
+                        <img src="assets/images/profile.jpeg" alt="Profile" class="profile-image">
+                    </div>
+                    <div class="hero-content">
+                        <h1>Bienvenido a <span class="gradient-text">GloboPlusFX</span></h1>
+                        <p>Somos especialistas en efectos especiales, pirotecnia y producciones impactantes. 
+                            Con más de 20 años de experiencia en el sector, llevamos emoción, tecnología y seguridad a cada evento.
+                            Transformamos momentos en experiencias inolvidables con efectos SFX, fuego, CO₂, iluminación y drops.</p>
+                        <p>📍 Operamos en Lima, Arequipa y todo el Perú.</p>
+                        <p>🎇 No decoramos… detonamos.</p>
+                        <button onclick="scrollToSection('projects')" class="cta-button">
+                            ¡Haz clic para ver nuestro portafolio!
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                                <polyline points="15 3 21 3 21 9" />
+                                <line x1="10" x2="21" y1="14" y2="3" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+<section id="projects">
+  <div class="container" style="position: relative;">
+
+    <h2 class="section-title">Proyectos <span class="gradient-text">realizados</span></h2>
+
+    <!-- Flechas para scroll -->
+    <button id="scroll-left" aria-label="Deslizar izquierda" 
+      style="
+        position: absolute;
+        top: 50%;
+        left: -50px;
+        transform: translateY(-50%);
+        background: #ff0000;
+        border: none;
+        color: white;
+        font-size: 24px;
+        cursor: pointer;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        box-shadow: 0 0 6px rgba(0,0,0,0.5);
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      ">
+      &#8249;
+    </button>
+
+    <button id="scroll-right" aria-label="Deslizar derecha" 
+      style="
+        position: absolute;
+        top: 50%;
+        right: -50px;
+        transform: translateY(-50%);
+        background: #ff0000;
+        border: none;
+        color: white;
+        font-size: 24px;
+        cursor: pointer;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        box-shadow: 0 0 6px rgba(0,0,0,0.5);
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      ">
+      &#8250;
+    </button>
+
+    <div class="projects-grid" style="
+      display: flex;
+      gap: 20px;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      padding: 20px 0;
+    ">
+
+      <!-- PROYECTOS EXISTENTES -->
+      <div class="project-card" style="min-width: 300px; flex-shrink: 0;">
+        <img id="project-image-anuel" src="assets/images/proyectos/anuel/anuel.jpg" alt="Anuel AA Proyecto" class="project-image">
+        <div class="project-content">
+          <div class="project-header">
+            <div class="project-icon">
+              <i class="fa fa-info" style="font-size: 24px;"></i>
+            </div>
+            <h3>Anuel AA x Globoplus FX.</h3>
+          </div>
+          <p>Los grandes efectos siempre en los grandes eventos. 💥</p>
+          <p>📍 Lima - Costa 21.</p>
+          <button class="project-button" onclick="window.open('https://www.instagram.com/p/DCP92oVSh_B/', '_blank')">
+            Ver nuestro trabajo
+          </button>
+        </div>
+      </div>
+
+      <div class="project-card" style="min-width: 300px; flex-shrink: 0;">
+        <img id="project-image-2" src="assets/images/proyectos/CarlosVives/proyecto1.gif" alt="Proyecto 2" class="project-image">
+        <div class="project-content">
+          <div class="project-header">
+            <div class="project-icon">
+              <i class="fa fa-info" style="font-size: 24px;"></i>
+            </div>
+            <h3>Carlos Vives x Globoplus FX.</h3>
+          </div>
+          <p>Iluminamos la noche con potencia visual. ⚡</p>
+          <p>📍 Arequipa - Plaza de Armas.</p>
+          <button class="project-button" onclick="window.open('https://www.instagram.com/p/DDr5zfRzE1J/', '_blank')">
+            Ver nuestro trabajo
+          </button>
+        </div>
+      </div>
+
+      <div class="project-card" style="min-width: 300px; flex-shrink: 0;">
+        <img id="project-image-3" src="assets/images/proyectos/RelsB/proyecto4.gif" alt="Proyecto 3" class="project-image">
+        <div class="project-content">
+          <div class="project-header">
+            <div class="project-icon">
+              <i class="fa fa-info" style="font-size: 24px;"></i>
+            </div>
+            <h3>Rels B x Globoplus FX.</h3>
+          </div>
+          <p>La energía de la música, acompañada de fuego real. 🔥</p>
+          <p>📍 Cusco - Festival de Altura.</p>
+          <button class="project-button" onclick="window.open('https://www.instagram.com/p/DJaPeapSFk8/', '_blank')">
+            Ver nuestro trabajo
+          </button>
+        </div>
+      </div>
+
+      <!-- 3 PROYECTOS NUEVOS -->
+      <div class="project-card" style="min-width: 300px; flex-shrink: 0;">
+        <img id="project-image-4" src="assets/images/proyectos/Shakira/proyecto1.jpg" alt="Proyecto 4" class="project-image">
+        <div class="project-content">
+          <div class="project-header">
+            <div class="project-icon">
+              <i class="fa fa-info" style="font-size: 24px;"></i>
+            </div>
+            <h3>Shakira x Globoplus FX.</h3>
+          </div>
+          <p>Brillando con luz propia en cada presentación. ✨</p>
+          <p>📍 Bogotá - Estadio El Campín.</p>
+          <button class="project-button" onclick="window.open('https://www.instagram.com/p/example1/', '_blank')">
+            Ver nuestro trabajo
+          </button>
+        </div>
+      </div>
+
+      <div class="project-card" style="min-width: 300px; flex-shrink: 0;">
+        <img id="project-image-5" src="assets/images/proyectos/JBalvin/proyecto2.jpg" alt="Proyecto 5" class="project-image">
+        <div class="project-content">
+          <div class="project-header">
+            <div class="project-icon">
+              <i class="fa fa-info" style="font-size: 24px;"></i>
+            </div>
+            <h3>J Balvin x Globoplus FX.</h3>
+          </div>
+          <p>Colores vibrantes que marcan tendencia. 🌈</p>
+          <p>📍 Medellín - Parque de los Deseos.</p>
+          <button class="project-button" onclick="window.open('https://www.instagram.com/p/example2/', '_blank')">
+            Ver nuestro trabajo
+          </button>
+        </div>
+      </div>
+
+      <div class="project-card" style="min-width: 300px; flex-shrink: 0;">
+        <img id="project-image-6" src="assets/images/proyectos/DuaLipa/proyecto3.jpg" alt="Proyecto 6" class="project-image">
+        <div class="project-content">
+          <div class="project-header">
+            <div class="project-icon">
+              <i class="fa fa-info" style="font-size: 24px;"></i>
+            </div>
+            <h3>Dua Lipa x Globoplus FX.</h3>
+          </div>
+          <p>Innovando en cada show con luces futuristas. 🚀</p>
+          <p>📍 Londres - O2 Arena.</p>
+          <button class="project-button" onclick="window.open('https://www.instagram.com/p/example3/', '_blank')">
+            Ver nuestro trabajo
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+  const container = document.querySelector('.projects-grid');
+  const btnLeft = document.getElementById('scroll-left');
+  const btnRight = document.getElementById('scroll-right');
+  const scrollAmount = 320; // ancho aprox de un proyecto + margen
+
+  btnLeft.addEventListener('click', () => {
+    container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+  });
+
+  btnRight.addEventListener('click', () => {
+    container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+  });
+</script>
+
+<!-- Services -->
+
+<section id="services" class="services">
+    <div class="service-container">
+        <h2 class="section-title">NUESTROS SERVICIOS</h2>
+        <div class="services-grid">
+            <div class="service-card slide-left glow-purple">
+                <h3 class="centrado">💥 SFX y Pirotecnia 🎆</h3>
+                <ul>
+                    <li>Espectáculos de pirotecnia sincronizados con música para conciertos y eventos.</li>
+                    <li>Máquinas de CO₂, confeti y humo para ambientes impactantes.</li>
+                    <li>Creación de experiencias personalizadas para eventos corporativos y festivales.</li>
+                    <li>Diseño y ejecución de shows pirotécnicos para conciertos en estadios y grandes escenarios.</li>
+                    <li>Uso de tecnologías de punta para garantizar seguridad y calidad en cada evento.</li>
+                </ul>
+            </div>
+
+            <div class="service-card slide-right glow-purple">
+                <h3 class="centrado">⚒️ Equipos y Maquinaria 💻</h3>
+                <ul>
+                    <li>Máquinas de fuego profesional como Explo X2 para efectos pirotécnicos precisos.</li>
+                    <li>Equipos de confeti y CO₂ de última generación.</li>
+                    <li>Soportes, estructuras y pantallas LED para ambientación visual.</li>
+                    <li>Colaboración con proveedores especializados en iluminación y visualización.</li>
+                    <li>Mantenimiento y operación segura de todos los equipos durante el show.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <!-- Contact section -->
+
+<section id="contact">
+    <div class="container">
+        <h2 class="section-title">CONTACTO</h2>
+        <div class="contact-links">
+            <a href="https://www.instagram.com/globoplusfx.pe/" target="_blank" class="contact-link" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.tiktok.com/@globoplusfx.pe" target="_blank" class="contact-link" aria-label="TikTok">
+                <i class="fab fa-tiktok"></i>
+            </a>
+            <a href="mailto:tuemail@ejemplo.com" class="contact-link" aria-label="Mail">
+                <i class="fas fa-envelope"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+        <section class="footer">
+            <footer>
+                <div class="copyrights">
+                    &copy; 2025 <span class="gradient-text">GloboPlus FX.</span> Todos los derechos reservados.
+                </div>
+            </footer>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+    <div id="fireworks-container"></div>
+    
+</body>
+
+</html>
